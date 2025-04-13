@@ -82,6 +82,7 @@ class TaskManager {
     // 4. Sort tasks by priority
     public void sortTasksByPriority() {
         // TODO: Implement sorting by priority logic
+        tasks.sort(Comparator.comparing(Task::getPriority));
     }
 
     // 5. Filter tasks by category
@@ -124,9 +125,12 @@ public class SI2025Lab1Main {
 
         manager.printTasks();
 
+        manager.sortTasksByPriority();
+
         System.out.println("\nRemoving task: 'Buy groceries'\n");
         manager.removeTask("Buy groceries");
         System.out.println("Updated task list:");
+
         manager.printTasks();
     }
 }
