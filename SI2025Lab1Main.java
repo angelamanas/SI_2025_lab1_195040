@@ -106,6 +106,20 @@ class TaskManager {
     // 8. Mark a task as completed by name
     public void markTaskCompleted(String name) {
         // TODO: Implement completion logic
+        boolean taskFound = false;
+
+
+        for (Task task : tasks) {
+            if (task.getName().equalsIgnoreCase(name)) {
+                task.complete();
+                taskFound = true;
+                break;
+            }
+        }
+
+        if (!taskFound) {
+            System.out.println("Task with name '" + name + "' not found!");
+        }
     }
 
     // 9. Mark all tasks in a category as completed
@@ -123,7 +137,12 @@ public class SI2025Lab1Main {
 
         // MISSING: Calls to the new methods that will be implemented
 
+        manager.markTaskCompleted("Buy groceries");
+
+        System.out.println("\nTasks sorted by priority:");
+        manager.sortTasksByPriority();
         manager.printTasks();
+
 
         manager.sortTasksByPriority();
 
@@ -132,5 +151,15 @@ public class SI2025Lab1Main {
         System.out.println("Updated task list:");
 
         manager.printTasks();
+
+        System.out.println("\nTasks sorted by name:");
+        manager.sortTasksByName();
+        manager.printTasks();
+
+        System.out.println("\nAll tasks:");
+
+        manager.printTasks();
+
+
     }
 }
