@@ -1,0 +1,51 @@
+Дел 2:
+
+13. За да креирам гранка за првото issue на ремоут репозиториумот ги користам овие команди:
+git fetch origin
+git checkout 1-remove-a-task-by-name
+Со командата git branch проверив дека се наоѓам на соодветната гранка на мастер.
+Сега за да ја креирам втората гранка за второто issue морам прво да се вратам на мастер гранката со командата git checkout master. Сега го креирам второто issue:
+git fetch origin
+git checkout 4-sort-tasks-by-priority
+Потоа со git branch ми го даде следново:
+ git branch
+  1-remove-a-task-by-name
+* 4-sort-tasks-by-priority
+  master
+Што значи дека * ми е на моменталната гранка на која што сум. Сега излегувам од таа гранка со git checkout master и ја креирам третата гранка за третото issue:
+git fetch origin
+git checkout 9-mark-a-task-as-completed-by-name
+
+14. Со командата git checkout 1-remove-a-task-by-name се префрлувам на мојата прва гранка
+
+15.  Го сменив јава кодот  со соодветната финкција за тој issue
+
+16. Со командата git add . ги ставам сите фајлови од соодветниот директориум на сцена. Потоа со командата git commit -m "Implement remove task method" правам комит на гранката.
+
+17. Синхронизирам со командата  git push origin 1-remove-a-task-by-name. 
+
+18. Креирање на pull request го правам на гитхаб со тоа што одам во делот Pull requests и отварам new pull request и ја спојувам мастер гранката со локалната 1-remove-a-task-by-name по што кликам да се креира.
+
+19. Истото како од горе што објаснив го правам и за останатите 2 issues. 
+
+20.Успешно направив merge на првиот pull request, меѓутоа наидов на конфликт кај вториот. отидов во делот resolve conflict и потоа во гит ги извршив следниве команди:
+git fetch origin
+ git checkout 4-sort-tasks-by-priority
+git merge origin/master
+со што сите промени ми се отворија во мојот јава код и јас само ги тргнав конфликтите. Потоа ги извршив командите:
+ git add SI2025Lab1Main.java
+git commit -m "Resolved merge conflict"
+ git push origin 4-sort-tasks-by-priority
+Сега одам на гитхаб и мерџнувам без проблем.
+Тука употребив recursive стратегија затоа што имаше конфликт каде на иста линија на кодот требаше да направам merge од 2 фајла.
+
+22.Прво со командата git checkout master се префрлам на мастер гранката. Потоа ја симнувам последната верзија која ми е на  мастер со git pull origin master. Потоа пробувам рачно да направам merge на третиот issue со командата git merge 9-mark-a-task-as-completed-by-name но ми дава дека има конфликт. Автоматски ми се отвара јава кодот на кој ми е дадено каде се конфликтите кои рачно ги решавам. Има ист конфликт како и претходно -recursive. Откако ги тргнав сите конфликти од кодот, сега го додавам на сцена и го комитнувам за да може да му направам merge:
+git add SI2025Lab1Main.java
+git commit -m "Resolved merge conflict 2"
+ git push origin master
+
+25. 
+
+
+
+ 
